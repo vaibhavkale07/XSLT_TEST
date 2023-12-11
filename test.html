@@ -1,0 +1,52 @@
+<?xml version = "1.0" encoding = "UFT-8"?>
+<html xmlns:mcs="urn:schemas-micorsoft-com:xslt" xmlns:xsl="http://www.w3.org/1999/XSL/Transfrom" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <style type="text/css">
+        table {
+            border-collapse: collapse;
+            border: 1pt solid #D8D9DA;
+            width: 100%;
+        }
+
+        th{
+            background-color: #D6EFED;
+            border: 1pt solid #D8D9DA;
+            text-align: center;
+            font-size: 12pt;
+        }
+        
+        td{
+            border: 1pt solid #D8D9DA;
+        }
+
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    Employee Name </th>
+                <th>Designation</th>
+                <th>Date of Joining</th>
+                <th>Address</th>
+                <th>Salary</th>
+
+            </tr>
+             </thead>
+             <tbody>
+                
+                <xsl:for-each select=" employees/employee[Designation= 'Technical Write' and Salary >'5LPA' and Salary < '7LPA']">
+                    <tr>
+                        <td> <xsl:value-of select = "EmployeeName"/></td>
+                        <td> <xsl:value-of select = "Designation"/></td>
+                        <td> <xsl:value-of select = "DataOfJoining"/></td>
+                        <td> <xsl:value-of select = "Address"/></td>
+                        <td> <xsl:value-of select = "Salary"/></td>
+                    </tr>
+                    </xsl:for-each>
+             </tbody>
+    </table>
+
+</body>
+</html>
